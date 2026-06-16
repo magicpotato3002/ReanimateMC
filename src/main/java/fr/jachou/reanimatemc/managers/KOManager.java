@@ -264,9 +264,12 @@ public class KOManager {
         int slownessDuration = plugin.getConfig().getInt("effects_on_revive.slowness", 10);
         int resistanceDuration = plugin.getConfig().getInt("effects_on_revive.resistance", 10);
 
-        player.addPotionEffect(new PotionEffect(PotionEffectType.NAUSEA, nauseaDuration * 20, 0));
-        player.addPotionEffect(new PotionEffect(PotionEffectType.SLOWNESS, slownessDuration * 20, 1));
-        player.addPotionEffect(new PotionEffect(PotionEffectType.RESISTANCE, resistanceDuration * 20, 1));
+        player.addPotionEffect(new PotionEffect(PotionEffectType.SLOWNESS, 10 * 20, 3));
+        player.addPotionEffect(new PotionEffect(PotionEffectType.RESISTANCE, 3 * 20, 3));
+        player.addPotionEffect(new PotionEffect(PotionEffectType.FIRE_RESISTANCE, 10 * 20, 0));
+        player.addPotionEffect(new PotionEffect(PotionEffectType.REGENERATION, 3 * 20, 2));
+        player.addPotionEffect(new PotionEffect(PotionEffectType.NAUSEA, 10 * 20, 0));
+        player.addPotionEffect(new PotionEffect(PotionEffectType.HUNGER, 15 * 20, 0));
 
         ReanimateMC.getInstance().getStatsManager().addRevive();
     }
