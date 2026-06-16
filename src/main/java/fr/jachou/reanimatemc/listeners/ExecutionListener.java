@@ -40,6 +40,7 @@ public class ExecutionListener implements Listener {
         // Après le délai, si le joueur est toujours K.O., l'exécution s’effectue
         ReanimateMC.getInstance().getServer().getScheduler().runTaskLater(ReanimateMC.getInstance(), () -> {
             if (koManager.isKO(victim)) {
+                victim.setKiller(damager);
                 koManager.execute(victim);
             }
         }, holdDuration);
